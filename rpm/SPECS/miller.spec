@@ -1,6 +1,6 @@
 Summary: Name-indexed data processing tool
 Name: miller
-Version: 5.6.0
+Version: 5.6.2
 Release: 1%{?dist}
 License: BSD
 Source: https://github.com/johnkerl/miller/releases/download/v%{version}/mlr-%{version}.tar.gz
@@ -40,6 +40,9 @@ make DESTDIR=%{buildroot} install-strip
 %{_mandir}/man1/mlr.1*
 
 %changelog
+* Sat Oct 20 2019 ryan woodsmall <rwoodsmall@gmail.com> - 5.6.2-1
+- miller 5.6.2
+
 * Thu Sep 12 2019 John Kerl <kerl.john.r@gmail.com> - 5.6.0-1
 - 5.6.0 release
 
