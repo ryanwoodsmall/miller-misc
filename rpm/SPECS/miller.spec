@@ -1,6 +1,6 @@
 Summary: Name-indexed data processing tool
 Name: miller
-Version: 5.9.1
+Version: 5.10.0
 Release: 3%{?dist}
 License: BSD
 Source: https://github.com/johnkerl/miller/releases/download/v%{version}/mlr-%{version}.tar.gz
@@ -37,7 +37,7 @@ make DESTDIR=%{buildroot} install-strip
 %files
 %doc README.md
 %{_bindir}/mlr
-%{_mandir}/man1/mlr.1*
+# % {_mandir}/man1/mlr.1*
 
 %changelog
 * Thu Dec 03 2020 ryan woodsmall <rwoodsmall@gmail.com>
@@ -45,6 +45,8 @@ make DESTDIR=%{buildroot} install-strip
 - 5.8.0 release
 - 5.9.0 release
 - 5.9.1 release
+- 5.10.0 release
+- disable man page
 
 * Tue Oct 20 2020 ryan woodsmall <rwoodsmall@gmail.com>
 - release bump for musl 1.2.1
@@ -52,7 +54,7 @@ make DESTDIR=%{buildroot} install-strip
 * Sat Oct 26 2019 ryan woodsmall <rwoodsmall@gmail.com>
 - release bump for musl 1.1.24
 
-* Sat Oct 20 2019 ryan woodsmall <rwoodsmall@gmail.com> - 5.6.2-1
+* Sat Oct 19 2019 ryan woodsmall <rwoodsmall@gmail.com> - 5.6.2-1
 - miller 5.6.2
 
 * Thu Sep 12 2019 John Kerl <kerl.john.r@gmail.com> - 5.6.0-1
