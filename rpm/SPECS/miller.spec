@@ -1,14 +1,14 @@
 Summary: Name-indexed data processing tool
 Name: miller
 Version: 5.10.0
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: BSD
 Source: https://github.com/johnkerl/miller/releases/download/v%{version}/mlr-%{version}.tar.gz
 URL: http://johnkerl.org/miller/doc
 BuildRequires: flex >= 2.5.35
 BuildRequires: gcc
 BuildRequires: make
-BuildRequires: musl-static >= 1.2.1-0
+BuildRequires: musl-static >= 1.2.1-1
 
 %description
 Miller (mlr) allows name-indexed data such as CSV and JSON files to be
@@ -40,6 +40,9 @@ make DESTDIR=%{buildroot} install-strip
 # % {_mandir}/man1/mlr.1*
 
 %changelog
+* Wed Dec 30 2020 ryan woodsmall <rwoodsmall@gmail.com>
+- release bump for musl CVE-2020-28928
+
 * Thu Dec 03 2020 ryan woodsmall <rwoodsmall@gmail.com>
 - 5.7.0 release
 - 5.8.0 release
