@@ -12,7 +12,7 @@ URL: http://johnkerl.org/miller/doc
 BuildRequires: flex >= 2.5.35
 BuildRequires: gcc
 BuildRequires: make
-BuildRequires: musl-static >= 1.2.2-1
+BuildRequires: musl-static >= 1.2.3-1
 
 %description
 Miller (mlr) allows name-indexed data such as CSV and JSON files to be
