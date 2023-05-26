@@ -22,7 +22,7 @@ streams data where possible so its memory requirements stay small. It works
 well with pipes and can feed "tail -f".
 
 %prep
-%setup -q -n mlr-%{version}
+%setup -q -n miller-%{version}
 
 %build
 . /etc/profile
