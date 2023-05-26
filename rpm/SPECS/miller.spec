@@ -4,15 +4,15 @@
 
 Summary: Name-indexed data processing tool
 Name: miller
-Version: 5.10.2
-Release: 6%{?dist}
+Version: 5.10.4
+Release: 7%{?dist}
 License: BSD
-Source: https://github.com/johnkerl/miller/releases/download/v%{version}/mlr-%{version}.tar.gz
+Source: https://github.com/johnkerl/miller/archive/refs/tags/v%{version}.tar.gz
 URL: http://johnkerl.org/miller/doc
 BuildRequires: flex >= 2.5.35
 BuildRequires: gcc
 BuildRequires: make
-BuildRequires: musl-static >= 1.2.3-1
+BuildRequires: musl-static >= 1.2.4-0
 
 %description
 Miller (mlr) allows name-indexed data such as CSV and JSON files to be
@@ -25,6 +25,7 @@ well with pipes and can feed "tail -f".
 %setup -q -n mlr-%{version}
 
 %build
+. /etc/profile
 sed -i 's/-g -pg//g' c/Makefile.am c/Makefile.in
 %configure \
   CC="musl-gcc" \
@@ -33,9 +34,11 @@ sed -i 's/-g -pg//g' c/Makefile.am c/Makefile.in
 make %{?_smp_mflags}
 
 %check
+. /etc/profile
 echo make check
 
 %install
+. /etc/profile
 make DESTDIR=%{buildroot} install-strip
 
 %files
@@ -44,6 +47,10 @@ make DESTDIR=%{buildroot} install-strip
 %{_mandir}/man1/mlr.1*
 
 %changelog
+* Thu May 25 2023 ryanwoodsmall
+- musl 1.2.4
+- source profile
+
 * Fri Apr 29 2022 ryan woodsmall <rwoodsmall@gmail.com>
 - release bump for musl 1.2.3
 
